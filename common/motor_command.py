@@ -12,9 +12,9 @@
 from microbit import *
 from k_motor import KMotor
 
-def rotate_left(r, act_time=500):
+def rotate_left(r, act_time=250):
     """
-    その場で 500 ms 左回転
+    その場で 250 ms 左回転
     """
     r.motor_on(KMotor.MOTOR_1, KMotor.FORWARD, 90)
     r.motor_on(KMotor.MOTOR_2, KMotor.REVERSE, 90)
@@ -23,9 +23,9 @@ def rotate_left(r, act_time=500):
     r.motor_brake(KMotor.MOTOR_2)
 
 
-def rotate_right(r, act_time=500):
+def rotate_right(r, act_time=250):
     """
-    その場で 500 ms右回転
+    その場で 250 ms右回転
     """
     r.motor_on(KMotor.MOTOR_1, KMotor.REVERSE, 90)
     r.motor_on(KMotor.MOTOR_2, KMotor.FORWARD, 90)
