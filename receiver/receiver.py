@@ -12,7 +12,7 @@ from microbit import *
 from motor_command import *
 from k_motor import *
 import radio
-DEBUG = True
+DEBUG = False
 VERSION = "1.1"
 
 #

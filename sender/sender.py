@@ -17,7 +17,7 @@ DEBUG = False
 ## 初期設定
 ##
 CHANNEL = 1
-TX_INTERVAL = 300
+TX_INTERVAL = 300   ## 送信間隔
 
 def get_signed_int(b):
     """
