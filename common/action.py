@@ -1,4 +1,5 @@
 from microbit import *
+import time
 
 def soccor_action():
     """
@@ -20,11 +21,11 @@ def rescue_action():
     for _ in range(20):
         pin1.write_digital(1)
         pin1.write_digital(0)
-        sleep_us(500)
+        time.sleep_us(500)
     for _ in range(20):
         pin1.write_digital(1)
         pin1.write_digital(0)
-        sleep_us(500)
+        time.sleep_us(500)
     for _ in range(20):
         pin1.write_digital(1)
         pin1.write_digital(0)
