@@ -6,29 +6,29 @@
 ## モーター動作命令関数
 ## モーターに左右・前進・後退の命令を出す
 ##
-## Copyright (c) 2022 Hiroshima Politechnical College.
+## Copyright (c) 2022,2023 Hiroshima Prefectural Technical Junior College.
 ##
 
 from microbit import *
 from k_motor import KMotor
 
-def rotate_left(r, act_time=250):
+def rotate_left(r, act_time=250, power=90):
     """
-    その場で 250 ms 左回転
+    その場で 250 ms 左回転、出力 90%
     """
-    r.motor_on(KMotor.MOTOR_1, KMotor.FORWARD, 90)
-    r.motor_on(KMotor.MOTOR_2, KMotor.REVERSE, 90)
+    r.motor_on(KMotor.MOTOR_1, KMotor.FORWARD, power)
+    r.motor_on(KMotor.MOTOR_2, KMotor.REVERSE, power)
     sleep(act_time)
     r.motor_brake(KMotor.MOTOR_1)
     r.motor_brake(KMotor.MOTOR_2)
 
 
-def rotate_right(r, act_time=250):
+def rotate_right(r, act_time=250, power=90):
     """
-    その場で 250 ms右回転
+    その場で 250 ms右回転、出力 90%
     """
-    r.motor_on(KMotor.MOTOR_1, KMotor.REVERSE, 90)
-    r.motor_on(KMotor.MOTOR_2, KMotor.FORWARD, 90)
+    r.motor_on(KMotor.MOTOR_1, KMotor.REVERSE, power)
+    r.motor_on(KMotor.MOTOR_2, KMotor.FORWARD, power)
     sleep(act_time)
     r.motor_brake(KMotor.MOTOR_1)
     r.motor_brake(KMotor.MOTOR_2)
