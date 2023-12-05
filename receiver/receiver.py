@@ -19,7 +19,7 @@ VERSION = "1.1"
 # 初期設定
 #
 CHANNEL = 1
-POWER = 80          # 出力値 (最大でここまで)
+POWER   = 80    # 出力値 (最大でここまで)
 
 def get_signed_int(b):
     """
