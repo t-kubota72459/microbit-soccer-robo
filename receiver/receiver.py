@@ -11,6 +11,7 @@
 from microbit import *
 from motor_command import *
 from k_motor import *
+import action
 import radio
 DEBUG = False
 VERSION = "1.1"
@@ -19,7 +20,13 @@ VERSION = "1.1"
 # 初期設定
 #
 CHANNEL = 1
-POWER   = 80    # 出力値 (最大でここまで)
+POWER   = 80        # 出力値 (最大でここまで)
+
+#  
+# どちらかの能力を身に着ける
+#
+JOB     = "SOCCOR"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
+action = action.setup(JOB)
 
 def get_signed_int(b):
     """
@@ -50,20 +57,6 @@ def flush():
        s = radio.receive_bytes()
 
 
-def performance():
-    """
-    LED 点灯パフォーマンス
-    """
-    for i in range(3):
-        display.show(Image.HAPPY)
-        sleep(50)
-        display.clear()
-        sleep(50)
-    display.show(Image.HAPPY)
-    sleep(50)
-    display.clear()
-    flush()     # 溜まっていたメッセージを読み捨てる
-
 #------------------------------------------------------------
 # メイン処理
 #------------------------------------------------------------
@@ -93,7 +86,8 @@ while True:
     elif bt == 0xbb:    # B ボタン
         rotate_right(r)
     elif bt == 0xbc:    # A＋B ボタン
-        performance()
+        action()
+        flush()
     
     # 加速度センサーの値
     (x, y, z) = ( get_signed_int(msg[1:3]), get_signed_int(msg[3:5]), get_signed_int(msg[5:7]) )
