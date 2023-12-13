@@ -96,7 +96,7 @@ micro:bit の黄色い LED の点滅が終われば転送終了。
 
 ### motor_command.py, k_motor.py, action.py ファイルのコピー
 
-次の手順で、receiver.py が使用する motor_command.py, k_motor.py, action.py ファイルを micro:bit にコピーする。
+receiver.py が使用する motor_command.py, k_motor.py, action.py ファイルを micro:bit にコピーする。
 ファイルアイコンをクリックし、画面右下に現れた、motor_command.py, k_motor.py, action.py を左側の micro:bit の領域にドラッグ＆ドロップする。
 micro:bit の黄色い LED の点滅が終われば転送終了。
 
