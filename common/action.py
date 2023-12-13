@@ -18,17 +18,12 @@ def rescue_action():
     """
     赤外線 LED 放射
     """
-    for _ in range(20):
+    for _ in range(350):
         pin1.write_digital(1)
+        time.sleep_us(8)
         pin1.write_digital(0)
-        time.sleep_us(500)
-    for _ in range(20):
-        pin1.write_digital(1)
-        pin1.write_digital(0)
-        time.sleep_us(500)
-    for _ in range(20):
-        pin1.write_digital(1)
-        pin1.write_digital(0)
+        time.sleep_us(16)
+
 
 def no_action():
     pass

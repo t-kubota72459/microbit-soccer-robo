@@ -21,12 +21,9 @@ VERSION = "1.1"
 #
 CHANNEL = 1
 POWER   = 80        # 出力値 (最大でここまで)
+JOB     = "RESCUE"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
 
-#  
-# どちらかの能力を身に着ける
-#
-JOB     = "SOCCOR"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
-action = action.setup(JOB)
+
 
 def get_signed_int(b):
     """
@@ -65,6 +62,7 @@ uart.write("**** RECEIVER {}****\r\n".format(VERSION))
 uart.write("CHANNEL:{}\r\n".format(CHANNEL))
 display.scroll("ch:{}".format(str(CHANNEL)))
 
+action = action.setup(JOB)
 r = KMotor()    # モーターオブジェクト
 
 radio.config(channel=CHANNEL, queue=2)
