@@ -100,6 +100,8 @@ receiver.py が使用する motor_command.py, k_motor.py, action.py ファイル
 ファイルアイコンをクリックし、画面右下に現れた、motor_command.py, k_motor.py, action.py を左側の micro:bit の領域にドラッグ＆ドロップする。
 micro:bit の黄色い LED の点滅が終われば転送終了。
 
+**忘れずにファイルアイコンをクリックし、下のコピー領域を閉じておくこと。**
+
 ** 注意：再度ファイルアイコンをクリックし、コピー領域を閉じておかないと、micro:bit を取り外した後、再度、PC に取り付けても認識されなくなる。**
 
 <center>
