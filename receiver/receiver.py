@@ -16,14 +16,14 @@ import radio
 DEBUG = False
 VERSION = "1.1"
 
-#
+#------------------------------------------------------------
 # 初期設定
-#
+# - CHANNEL を自分のロボの番号に変更する
+#------------------------------------------------------------
 CHANNEL = 1
-POWER   = 80        # 出力値 (最大でここまで)
+POWER   = 40        # モーターの出力値 (0 ~ 100 %)
+TIME    = 500       # その場での回転時間 (ミリ秒)
 JOB     = "RESCUE"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
-
-
 
 def get_signed_int(b):
     """
@@ -80,9 +80,9 @@ while True:
 
     bt = msg[0]
     if bt == 0xba:      # A ボタン
-        rotate_left(r)
+        rotate_left(r, TIME)
     elif bt == 0xbb:    # B ボタン
-        rotate_right(r)
+        rotate_right(r, TIME)
     elif bt == 0xbc:    # A＋B ボタン
         action()
         flush()

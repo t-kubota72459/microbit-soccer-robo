@@ -59,7 +59,7 @@ mu エディタを起動し、+ アイコンをクリックし、sender.py を�
 micro:bit の黄色い LED の点滅が終われば転送終了。
 
 <center>
-<img src="images/sender.png", width="60%"/>
+<img src="images/sender.png", width="80%"/>
 </center>
 
 ## 受信機セットアップ
@@ -76,6 +76,9 @@ mu エディタを起動し、+ アイコンをクリックし、receiver.py を
 <dt>POWER</dt>
 <dd>モーターへの出力値。単位は %。0~100 の間で設定する。100% にすると現在の電池の状態で可能な最大出力になる。</dd>
 
+<dt>TIME</dt>
+<dd>A ボタン、B ボタンを押したときのその場での回転時間。単位はミリ秒。250 ミリ秒ぐらいが扱いやすい。</dd>
+
 <dt>JOB</dt>
 <dd> A, B ボタンを同時に押したときのロボの動作を決める。```SOCCOR``` または ```RESCUE``` いずれかを選択する。
 
@@ -91,7 +94,7 @@ mu エディタを起動し、+ アイコンをクリックし、receiver.py を
 micro:bit の黄色い LED の点滅が終われば転送終了。
 
 <center>
-<img src="images/receiver.png", width="60%"/>
+<img src="images/receiver.png", width="80%"/>
 </center>
 
 ### motor_command.py, k_motor.py, action.py ファイルのコピー
@@ -105,5 +108,5 @@ micro:bit の黄色い LED の点滅が終われば転送終了。
 **注意：再度ファイルアイコンをクリックし、コピー領域を閉じておかないと、micro:bit を取り外した後、再度、PC に取り付けても認識されなくなる。**
 
 <center>
-<img src="images/copyfiles.png", width="60%"/>
+<img src="images/copyfiles.png", width="80%"/>
 </center>
