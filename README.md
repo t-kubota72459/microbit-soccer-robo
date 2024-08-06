@@ -44,7 +44,7 @@ https://github.com/t-kubota72459/microbit-soccer-robo
 にアクセスし、Code ⇒ Download ZIP を選択すると、プログラム一式がダウンロードできる。
 
 <center>
-<img src="./images/2024-08-06 (14).png" width="60%">
+<img src="./images/code_download.png" width="60%">
 </center>
 
 ZIP ファイル形式なので、任意のフォルダに展開しておく。
@@ -55,7 +55,7 @@ ZIP ファイル形式なので、任意のフォルダに展開しておく。
 「メインコードを sender.py に置き換え」を確認し、実行する。
 
 <center>
-<img src="./images/2024-08-06.png" width="60%">
+<img src="./images/sender_setup.png" width="60%">
 </center>
 
 ## パラメーターの調整
@@ -80,12 +80,12 @@ ZIP ファイル形式なので、任意のフォルダに展開しておく。
 いくつかウィンドウが開くが、内容に従い選択する。
 
 <center>
-<img src="./images/2024-08-06 (3).png" width="40%">
-<img src="./images/2024-08-06 (4).png" width="40%">
+<img src="./images/microbit_image.png" width="40%">
+<img src="./images/connection_image.png" width="40%">
 </center>
 
 <center>
-<img src="./images/2024-08-06 (5).png" width="40%">
+<img src="./images/confirmation_image.png" width="40%">
 </center>
 
 # receiver セットアップ
@@ -128,7 +128,7 @@ sender とおなじように、https://python.microbit.org/v/3 にアクセス�
 k_motor.py, motor_comannd.py も同じの設定になっていることを確認する。
 
 <center>
-<img src="./images/2024-08-06 (11).png" width="60%">
+<img src="./images/fileproperty_image.png" width="60%">
 </center>
 
 ## プログラミング
