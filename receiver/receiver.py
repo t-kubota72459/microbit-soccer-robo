@@ -23,7 +23,7 @@ VERSION = "1.1"
 CHANNEL = 1
 POWER   = 30        # モーターの出力値 (0 ~ 100 %)
 TIME    = 500       # その場での回転時間 (ミリ秒)
-JOB     = "RESCUE"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
+JOB     = "SOCCOR"  # SOCCOR: サッカー選手 / RESCUE: レスキュー隊員
 
 def get_signed_int(b):
     """
