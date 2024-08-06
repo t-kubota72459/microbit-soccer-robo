@@ -11,6 +11,12 @@
 
 の合計 7 バイトを一定周期で受信側に送信する。
 
+加速度センサーについては図を参照：
+
+<center>
+<img src="./images/Gsensor.png" width="80%">
+</center>
+
 # receiver.py
 
 受信機能は receiver.py と motor_command.py, k_motor.py, action.py の 4 ファイルで構成される。
@@ -19,11 +25,9 @@
 
 # プログラミング準備
 
-## mu エディタ
+## https://python.microbit.org/v/3
 
-micro:bit のプログラミングには mu エディタを使う。(Windows のインストーラーでは) mu エディタはユーザーアカウント領域にインストールされるため、各ユーザーごとに行う必要がある。
-
- - https://codewith.mu/
+micro:bit のプログラミングにはインターネット上のプログラミング環境 https://python.microbit.org/v/3 を使う。インターネット環境が必要であることに注意する。
 
 ## ソースコード
 
@@ -33,38 +37,63 @@ github からソースコードを入手する。
 $ git clone https://github.com/t-kubota72459/microbit-soccer-robo.git
 ```
 
-入手したら、sender.py, receiver.py, common フォルダの下にある motor_command.py, k_motor.py, action.py の３つのファイルを <ユーザー名>/mu_code フォルダにコピーする。
+git コマンドがないときには、ウェブブラウザで、
+
+https://github.com/t-kubota72459/microbit-soccer-robo
+
+にアクセスし、Code ⇒ Download ZIP を選択すると、プログラム一式がダウンロードできる。
 
 <center>
-<img src="./images/step1.png" width="80%">
+<img src="./images/2024-08-06 (14).png" width="60%">
 </center>
 
-## 送信側セットアップ
+ZIP ファイル形式なので、任意のフォルダに展開しておく。
 
-mu エディタを起動し、+ アイコンをクリックし、sender.py を開く。  
-以下の変数を正しく設定する。
+# sender セットアップ
+
+右下の「開く」を選択し、展開した ZIP ファイルの中にある sender.py を選択する。
+「メインコードを sender.py に置き換え」を確認し、実行する。
+
+<center>
+<img src="./images/2024-08-06.png" width="60%">
+</center>
+
+## パラメーターの調整
+
+以下のパラメーターを体験内容などに応じて変更する：
 
 <dl>
 <dt>CHANNEL</dt>
 <dd>チャンネル変数  
 送信機と受信機が使用する通信チャンネル。他の micro:bit とかぶると混信するので注意。
 </dd>
+
 <dt>TX_INTERVAL</dt>
 <dd>命令の送信間隔  
-送信間隔を小さくすれば、命令により素早く反応するが、小さくしすぎると受信側で命令を処理しきれなくなる恐れがある。実際に試して調節する必要がある。
+送信間隔を小さくすれば、命令により素早く反応するが、小さくしすぎると受信側で命令を処理しきれなくなる恐れがある。実際に試して調節する。
 </dd>
 </dl>
 
-転送アイコンをクリックし、micro:bit にプログラム (sender.py) を転送する。転送時、micro:bit のデータをクリアするため、少々時間がかかる。
-micro:bit の黄色い LED の点滅が終われば転送終了。
+## プログラミング
+
+左下の「micro:bit に送る」を選択し、sender 側 micro:bit をプログラムする。
+いくつかウィンドウが開くが、内容に従い選択する。
 
 <center>
-<img src="images/sender.png", width="80%"/>
+<img src="./images/2024-08-06 (3).png" width="40%">
+<img src="./images/2024-08-06 (4).png" width="40%">
 </center>
 
-## 受信機セットアップ
+<center>
+<img src="./images/2024-08-06 (5).png" width="40%">
+</center>
 
-mu エディタを起動し、+ アイコンをクリックし、receiver.py を開く。  
+# receiver セットアップ
+
+sender とおなじように、https://python.microbit.org/v/3 にアクセスする。
+
+右下の「開く」を選択し、入手したコードの receiver.py を選択する。
+「メインコードを receiver.py に置き換え」を確認し、実行する。
 
 以下の変数を正しく設定する。
 
@@ -73,6 +102,7 @@ mu エディタを起動し、+ アイコンをクリックし、receiver.py を
 <dd>チャンネル変数  
 送信機と受信機が使用する通信チャンネル。他の micro:bit とかぶると混信するので注意。
 </dd>
+
 <dt>POWER</dt>
 <dd>モーターへの出力値。単位は %。0~100 の間で設定する。100% にすると現在の電池の状態で可能な最大出力になる。</dd>
 
@@ -90,23 +120,23 @@ mu エディタを起動し、+ アイコンをクリックし、receiver.py を
 </dl>
 </dl>
 
-転送アイコンをクリックし、micro:bit にプログラム (receiver.py) を転送する。転送時、micro:bit のデータをクリアするため、少々時間がかかる。
-micro:bit の黄色い LED の点滅が終われば転送終了。
+## 重要！モジュールの追加
+
+<strong>receiver 側は複数の Python モジュールで動作するため、以下の作業が必要。</strong>
+
+右下の「開く」を選択し、入手したコードの common フォルダにある action.py, k_motor.py, motor_command.py の３つのファイルをアップロードする。そのとき、「メインコードを action.py に置き換え」の右側のファイルアイコンをクリックし、「action.py ファイルを置き換え」に変更する。
+k_motor.py, motor_comannd.py も同じの設定になっていることを確認する。
 
 <center>
-<img src="images/receiver.png", width="80%"/>
+<img src="./images/2024-08-06 (11).png" width="60%">
 </center>
 
-### motor_command.py, k_motor.py, action.py ファイルのコピー
+## プログラミング
 
-receiver.py が使用する motor_command.py, k_motor.py, action.py ファイルを micro:bit にコピーする。
-ファイルアイコンをクリックし、画面右下に現れた、motor_command.py, k_motor.py, action.py を左側の micro:bit の領域にドラッグ＆ドロップする。
-micro:bit の黄色い LED の点滅が終われば転送終了。
+左下の「micro:bit に送る」を選択し、receiver 側 micro:bit をプログラムする。
 
-**忘れずにファイルアイコンをクリックし、下のコピー領域を閉じておくこと。**
+# 状態 (プロジェクト) の保存
 
-**注意：再度ファイルアイコンをクリックし、コピー領域を閉じておかないと、micro:bit を取り外した後、再度、PC に取り付けても認識されなくなる。**
+右下の「保存」を選択すると、プロジェクト単位（送信側なら sender.py のみ、受信側なら receiver.py, action.py, k_motor.py, motor_command.py の 4 ファイル）でローカルの PC 上にダウンロードして保存できる。(拡張子は .hex)
 
-<center>
-<img src="images/copyfiles.png", width="80%"/>
-</center>
+保存したファイルは、「開く」を使って再利用可能。
