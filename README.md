@@ -11,11 +11,13 @@
 
 の合計 7 バイトを一定周期で受信側に送信する。
 
+<!--
 加速度センサーについては図を参照：
 
 <center>
 <img src="./images/Gsensor.png" width="80%">
 </center>
+-->
 
 # receiver.py
 
