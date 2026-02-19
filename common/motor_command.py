@@ -19,8 +19,8 @@ def rotate_left(r, act_time=250, power=90):
     r.motor_on(KMotor.MOTOR_1, KMotor.FORWARD, power)
     r.motor_on(KMotor.MOTOR_2, KMotor.REVERSE, power)
     sleep(act_time)
-    r.motor_brake(KMotor.MOTOR_1)
-    r.motor_brake(KMotor.MOTOR_2)
+    r.motor_off(KMotor.MOTOR_1)
+    r.motor_off(KMotor.MOTOR_2)
 
 
 def rotate_right(r, act_time=250, power=90):
@@ -30,8 +30,8 @@ def rotate_right(r, act_time=250, power=90):
     r.motor_on(KMotor.MOTOR_1, KMotor.REVERSE, power)
     r.motor_on(KMotor.MOTOR_2, KMotor.FORWARD, power)
     sleep(act_time)
-    r.motor_brake(KMotor.MOTOR_1)
-    r.motor_brake(KMotor.MOTOR_2)
+    r.motor_off(KMotor.MOTOR_1)
+    r.motor_off(KMotor.MOTOR_2)
 
 
 def turn_left(r, direction, speed):
