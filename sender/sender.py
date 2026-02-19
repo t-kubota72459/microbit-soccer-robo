@@ -53,6 +53,14 @@ radio.on()
 display.scroll("ch:{}".format(str(CHANNEL)))
 
 while True:
+
+    # 声を出す
+    # if microphone.sound_level() > 150:
+    #     display.show(Image.SUPPRISED)
+    #     radio.send("BOOST!")
+    #     sleep(1000)
+    #     display.clear()
+
     # ボタンの状態を取得する
     b = button_stats()
 

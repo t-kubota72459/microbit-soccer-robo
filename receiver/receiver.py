@@ -42,6 +42,8 @@ def wait_msg():
     s = None
     while s is None:
         s = radio.receive_bytes()
+        if s.startwith(b'\x01\x00\x01'):
+            s = str(s[3:], 'utf8')
     return s
 
 
@@ -75,6 +77,12 @@ while True:
     # メッセージ受信
     #
     msg = wait_msg()
+
+    # ブーストモード
+    # if msg == "BOOST!":
+    #   forwad(r, 100)        
+    #   sleep(2000)
+
     if len(msg) != 7:   ## 7bytes のみ受け入れる
         continue
 
